@@ -10,10 +10,17 @@ RUN /data/miniconda.sh -b -p /root/miniconda3
 ENV PATH /root/miniconda3/bin:$PATH
 RUN conda init bash && \
     conda clean -a -y && \
-    conda install python=3.10 cudnn libcufft cuda-cudart && \
+    conda install -y python=3.10 cudnn libcufft cuda-cudart && \
     conda clean -a -y
 RUN conda --version
 
+ENV HF_HOME /data/.hf
+RUN mkdir -p $HF_HOME
+
 RUN ls -al /data
+RUN python -V && pip -V
+RUN pip install -U hfutils && hfutils whoami
+ADD pyskeb.sh /data/pyskeb.sh
+RUN chmod +x /data/pyskeb.sh
 
 CMD [ "/start.sh" ]
