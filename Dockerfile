@@ -17,10 +17,11 @@ RUN conda --version
 ENV HF_HOME /data/.hf
 RUN mkdir -p $HF_HOME
 
-RUN ls -al /data
 RUN python -V && pip -V
 RUN pip install -U hfutils && hfutils whoami
-ADD pyskeb.sh /data/pyskeb.sh
-RUN chmod +x /data/pyskeb.sh
+ADD pyskeb.sh /pyskeb.sh
+RUN chmod +x /pyskeb.sh
+
+RUN ls -al /data
 
 CMD [ "/start.sh" ]
