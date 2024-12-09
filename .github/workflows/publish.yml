@@ -19,6 +19,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the runpod-template-pytorch2 Docker image
         run: |
-          docker build . --tag ghcr.io/deepghs/runpod-pytorch-conda:latest
-          docker push ghcr.io/deepghs/runpod-pytorch-conda:latest
+          docker build . --tag ghcr.io/deepghs/pytorch-conda-image:latest
+          docker push ghcr.io/deepghs/pytorch-conda-image:latest
 
