@@ -42,6 +42,8 @@ RUN python -V && pip -V
 RUN pip install -U hfutils && hfutils whoami
 ADD pyskeb.sh /pyskeb.sh
 RUN chmod +x /pyskeb.sh
+ADD yolov8.sh /yolov8.sh
+RUN chmod +x /yolov8.sh
 
 RUN ls -al /data
 
