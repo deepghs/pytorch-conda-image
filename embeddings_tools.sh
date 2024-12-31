@@ -1,4 +1,4 @@
-EMBS_DIR=/data/yolov8
+EMBS_DIR=/data/embeddings_tools
 
 git clone https://github.com/deepghs/embeddings_tools.git ${EMBS_DIR}
 cd ${EMBS_DIR}
