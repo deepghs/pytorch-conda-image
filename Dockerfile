@@ -40,10 +40,11 @@ RUN mkdir -p $HF_HOME
 
 RUN python -V && pip -V
 RUN pip install -U hfutils && hfutils whoami
-ADD pyskeb.sh /pyskeb.sh
-RUN chmod +x /pyskeb.sh
-ADD yolov8.sh /yolov8.sh
-RUN chmod +x /yolov8.sh
+ADD pyskeb.sh           /pyskeb.sh
+ADD yolov8.sh           /yolov8.sh
+ADD classification.sh   /classification.sh
+ADD embeddings_tools.sh /embeddings_tools.sh
+RUN chmod +x /*.sh
 
 RUN ls -al /data
 
