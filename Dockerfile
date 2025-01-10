@@ -44,6 +44,7 @@ ADD pyskeb.sh           /pyskeb.sh
 ADD yolov8.sh           /yolov8.sh
 ADD classification.sh   /classification.sh
 ADD embeddings_tools.sh /embeddings_tools.sh
+ADD cyberharem.sh       /cyberharem.sh
 RUN chmod +x /*.sh
 
 RUN ls -al /data
